@@ -27,15 +27,15 @@ READ ME  de DWES
 
 *[Conclusión](#conclusión)
 
-##descripción-del-proyecto
+\##descripción-del-proyecto
 -Descripción del Proyecto
 Pues es un proyecto proyectado para realizarse en los próximos días, semanas o meses... Según las proyecciones
 
-##Estado-del-proyecto
+\##Estado-del-proyecto
 -Estado del Proyecto
 Comenzando
 
-##tecnologías-utilizadas
+\##tecnologías-utilizadas
 -Tecnologías Utilizadas
 Creo que va a ser Pyhton... No sé si alguna más.
 
