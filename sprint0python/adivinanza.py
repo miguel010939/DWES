@@ -14,7 +14,7 @@ for adivinanza, respuesta in adivinanzas.items():
         print("Respuesta incorrecta!")
         puntuacion-=5
 
-print("\nPuntuación total:"+str(puntuacion))
+print("\nPuntuación total: "+str(puntuacion))
 
 
 
