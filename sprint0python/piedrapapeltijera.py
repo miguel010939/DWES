@@ -7,7 +7,7 @@ for i in range(5):
     ai=sample(pos, 1)[0]
     if ai==user:
         print("Empate!")
-    elif (user==pos[0]) & (ai==pos[2]) | (user==pos[1]) & (ai==pos[0]) | (user==pos[2]) & (ai==pos[1]):
+    elif user==pos[0] & (ai==pos[2]) | (user==pos[1]) & (ai==pos[0]) | (user==pos[2]) & (ai==pos[1]):
         print("Victoria!")
         score+=1
     elif (user==pos[2]) & (ai==pos[0]) | (user==pos[0]) & (ai==pos[1]) | (user==pos[1]) & (ai==pos[2]):
