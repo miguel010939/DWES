@@ -1,10 +1,8 @@
 from random import sample
 pos=["piedra", "papel", "tijera"]
 score=0
-# Sin los parentesis, estos operadores logicos me dan error por el orden de las operaciones: python trata de resolverlos antes de las comparaciones, que devolverian booleano, y los intenta aplicar a las strings
-# Luego descubri que tambien existen los operadores equivalentes "and" y "or" que no dan estos problemas... Oooops
-# Un poco raro que "&" y "and" tengan distinta prioridad operacional, pero bueno.. XD
-# Resulta que no son equivalentes, Miguel: https://www.freecodecamp.org/espanol/news/operadores-basicos-en-python-con-ejemplos/ -> Operadores Bit a Bit
+#Victoria user==ai+1 %3 --> pos.index(user)==(pos.index(ai)+1)%3
+#Derrota user== ai+2 %3 --> pos.index(user)==(pos.index(ai)+2)%3
 for i in range(5):
     user=input("\n¿Piedra, papel o tijera? ").lower()
 
@@ -12,10 +10,10 @@ for i in range(5):
     if ai==user:
         print("Empate!")
 
-    elif (user==pos[0]) & (ai==pos[2]) | (user==pos[1]) & (ai==pos[0]) | (user==pos[2]) & (ai==pos[1]):
+    elif pos.index(user)==(pos.index(ai)+1)%3:
         print("Victoria!")
         score+=1
-    elif (user==pos[2]) & (ai==pos[0]) | (user==pos[0]) & (ai==pos[1]) | (user==pos[1]) & (ai==pos[2]):
+    elif pos.index(user)==(pos.index(ai)+2)%3:
         print("Derrota!")
         score-=1
 
