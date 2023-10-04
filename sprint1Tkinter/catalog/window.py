@@ -12,11 +12,11 @@ class MainWindow():
         root.title("MainWindow")
 
         self.cells=[
-            Cell("Animal 1", ".\\data\\edited\\arctic_fox_100x100.png"),
-            Cell("Animal 2", ".\\data\\edited\\brown_bear_100x100.png"),
-            Cell("Animal 3", ".\\data\\edited\\cat_100x100.png"),
-            Cell("Animal 4", ".\\data\\edited\\koala_100x100.png"),
-            Cell("Animal 5", ".\\data\\edited\\red_panda_100x100.png")
+            Cell("Animal 1", ".\\data\\unedited\\07CAT-STRIPES-mediumSquareAt3X-v2.jpg"),
+            Cell("Animal 2", ".\\data\\unedited\\arctic_fox.jpg"),
+            Cell("Animal 3", ".\\data\\unedited\\brown_bear.jpg"),
+            Cell("Animal 4", ".\\data\\unedited\\koala.jpg"),
+            Cell("Animal 5", ".\\data\\unedited\\red_panda.jpg")
         ]
         for i, cell in enumerate(self.cells):
             label=ttk.Label(root, image=cell.image, text=cell.title, compound=tk.BOTTOM)
