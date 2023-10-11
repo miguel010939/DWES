@@ -1,0 +1,17 @@
+[
+{"name":"artic fox",
+"description":"A species of fox adapted to the cold climate of the northamerican tundra",
+"image_url":"https://github.com/miguel010939/DWES/blob/main/sprint1Tkinter/catalog/data/edited/arctic_fox_100x100.png"},
+{"name":"brown bear",
+"description":"The most common species of bear. Very commonly found in Eurasia",
+"image_url":"https://github.com/miguel010939/DWES/blob/main/sprint1Tkinter/catalog/data/edited/brown_bear_100x100.png"},
+{"name":"tabby cat",
+"description":"It's just a cat",
+"image_url":"https://github.com/miguel010939/DWES/blob/main/sprint1Tkinter/catalog/data/edited/cat_100x100.png"},
+{"name":"koala",
+"description":"The most famous of the many animals endemic to Australia",
+"image_url":"https://github.com/miguel010939/DWES/blob/main/sprint1Tkinter/catalog/data/edited/koala_100x100.png"},
+{"name":"red panda",
+"description":"Not a bear, but a mustelid. Lives in China and the Himalayas",
+"image_url":"https://github.com/miguel010939/DWES/blob/main/sprint1Tkinter/catalog/data/edited/red_panda_100x100.png"}
+]
