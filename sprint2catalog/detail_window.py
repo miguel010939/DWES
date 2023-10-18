@@ -13,11 +13,12 @@ class DetailWindow:
         self.window=tk.Toplevel(root)
         self.window.title(self.title)
 
+        title_label=ttk.Label(self.window, text=self.title)
+        title_label.pack() # cambie el orden de los pack() para que el titulo apareciese encima de la imagen
 
         image_label=ttk.Label(self.window, image=self.image)
-        image_label.pack()
-        title_label=ttk.Label(self.window, text=self.title)
-        title_label.pack()
+        image_label.pack(pady=7) # y le anhadi algo de padding a la imagen
+        
 
         description_label=ttk.Label(self.window, text=self.description, wraplength=300)
         description_label.pack()
