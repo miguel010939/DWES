@@ -6,10 +6,10 @@ from detail_window import DetailWindow
 
 class MainWindow:
     def on_button_clicked(self, cell):
-        
-        #root_detail = Tk()
-        DetailWindow(self.root, cell.title, cell.image, cell.description)
-        #root_detail.mainloop()
+        # Creo una ventana toplevel para luego poder centrar en la pantalla la detail_window
+        root_detail = tk.Toplevel()
+        DetailWindow(root_detail, cell.title, cell.image, cell.description)
+        root_detail.mainloop()
 
     
     def __init__(self, root, json_data):
@@ -17,9 +17,11 @@ class MainWindow:
         self.root=root
         root.title("MainWindow")
 
-        x=(self.root.winfo_screenwidth() - self.root.winfo_reqwidth())/2
-        y=(self.root.winfo_screenheight() - self.root.winfo_reqheight())/2
-        self.root.geometry(f"+{int(x)}+{int(y)}")
+        self.root.geometry("200x300")
+
+        self.x=(self.root.winfo_screenwidth() - self.root.winfo_reqwidth())/2
+        self.y=(self.root.winfo_screenheight() - self.root.winfo_reqheight())/2
+        self.root.geometry(f"+{int(self.x)}+{int(self.y)}")
 
         self.cells=[]
         for dict in json_data:
