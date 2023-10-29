@@ -4,7 +4,7 @@ import load_data
 
 
 class GameWindow:
-    def __init__(self, root, difficulty=0):
+    def __init__(self, root, difficulty):
         self.difficulty = difficulty
         self.root = root
         self.root.title("Juego del Ahorcado")
@@ -23,7 +23,7 @@ class GameWindow:
         self.game_done = False
         self.game_won = False
 
-        #self.image_list = load_the_data.get_images()
+        self.image_list = load_the_data.get_images()
 
         self.welcome = tk.Label(self.root, text="¡BIENVENIDO AL JUEGO DEL AHORCADO!\nAdivina una letra de la palabra",
                                 font=("Arial", 15))
@@ -34,8 +34,8 @@ class GameWindow:
 
         self.frame2 = tk.Frame(self.root)
         self.frame2.pack()
-        #self.hangman = tk.Label(self.frame2, image=self.image_list[self.mistakes])
-      #  self.hangman.pack()
+        self.hangman = tk.Label(self.frame2, image=self.image_list[self.mistakes])
+        self.hangman.pack()
 
         self.guessed_word_label = tk.Label(self.frame2, text=self.guessed_word.upper(), font=("Arial Black", 14))
         self.guessed_word_label.pack(side=tk.LEFT)
@@ -60,7 +60,7 @@ class GameWindow:
         self.mistakes_label.config(text=str(self.mistakes) + "/6 ERRORES")
         self.entry.delete(0, tk.END)
         # Actualiza tambien imagen aqui
-      #  self.hangman.config(image=self.image_list[self.mistakes])
+        self.hangman.config(image=self.image_list[self.mistakes])
 
     def check_result(self):
         if self.mistakes >= 6:
@@ -103,5 +103,5 @@ class GameWindow:
 
 if __name__ == '__main__':
     root_main = tk.Tk()
-    app = GameWindow(root_main, 0)
+    app = GameWindow(root_main, 1)
     root_main.mainloop()

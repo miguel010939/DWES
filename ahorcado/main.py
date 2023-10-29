@@ -43,7 +43,7 @@ class MainWindow:
         self.start_game(2)
 
     def start_game(self, difficulty):
-        root_game = tk.Tk()
+        root_game = tk.Toplevel()
         game = GameWindow(root_game, difficulty)
         root_game.mainloop()
 
