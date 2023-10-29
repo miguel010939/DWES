@@ -21,21 +21,21 @@ class LoadData:
         self.thread2.start()
 
     def fetch_json(self):
-        response = requests.get("https://raw.githubusercontent.com/miguel010939/DWES/main/recursos/catalog.json")
+        response = requests.get("https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/dict/dictionary.json")
         if response.status_code == 200:
             self.json = response.json()
             print(self.json)
             self.finished1 = True
 
     def fetch_images(self):
-        response = requests.get("https://raw.githubusercontent.com/miguel010939/DWES/main/recursos/catalog.json")
+        response = requests.get("https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/dict/hangman_images.json")
         if response.status_code == 200:
             self.images = response.json()
-            # print(self.images)
+            print(self.images)
             self.finished2 = True
 
     def get_images(self):
-        image_list = [ImageTk.PhotoImage(Image.open(BytesIO(path.content))) for path in self.images.get("hangman_sequence")]
+        image_list = [ImageTk.PhotoImage(Image.open(BytesIO(requests.get(path).content))) for path in self.images.get("hangman_sequence")]
         return image_list
 
     def random_word(self, difficulty):

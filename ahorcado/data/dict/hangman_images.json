@@ -1,3 +1,9 @@
-{"hangman_sequence":["https://upload.wikimedia.org/wikipedia/commons/c/cf/Prince_Hanzoku_terrorised_by_a_nine-_tailed_fox.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/bb/Yanju%27s_tomb%2C_nine-tailed_fox.jpg", "https://upload.wikimedia.org/wikipedia/commons/c/cf/Prince_Hanzoku_terrorised_by_a_nine-_tailed_fox.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/bb/Yanju%27s_tomb%2C_nine-tailed_fox.jpg"
-
+{"hangman_sequence":[
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-0.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-1.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-2.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-3.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-4.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-5.png",
+  "https://raw.githubusercontent.com/miguel010939/DWES/main/ahorcado/data/img/el-ahorcado-6.png"
 ]}

@@ -4,7 +4,7 @@ import load_data
 
 
 class GameWindow:
-    def __init__(self, root, difficulty):
+    def __init__(self, root, difficulty=0):
         self.difficulty = difficulty
         self.root = root
         self.root.title("Juego del Ahorcado")
@@ -14,18 +14,16 @@ class GameWindow:
         while not (load_the_data.finished1 and load_the_data.finished2):
             self.root.after(100)
 
+        # carga una palabra aleatoria del diccionario descargado, dependiendo del nivel de dificultad
         self.word = load_the_data.random_word(self.difficulty)
 
         self.mistakes = 0
-        #self.word = "palabra"
         self.guessed_word = "_" * self.word.__len__()
         self.used_letters = []
         self.game_done = False
         self.game_won = False
 
-        # image_paths = []
-        # image_list = [for url in image_paths]
-
+        #self.image_list = load_the_data.get_images()
 
         self.welcome = tk.Label(self.root, text="¡BIENVENIDO AL JUEGO DEL AHORCADO!\nAdivina una letra de la palabra",
                                 font=("Arial", 15))
@@ -36,8 +34,8 @@ class GameWindow:
 
         self.frame2 = tk.Frame(self.root)
         self.frame2.pack()
-        # self.hangman = tk.Label(self.frame2, image=)
-        # self.hangman.pack()
+        #self.hangman = tk.Label(self.frame2, image=self.image_list[self.mistakes])
+      #  self.hangman.pack()
 
         self.guessed_word_label = tk.Label(self.frame2, text=self.guessed_word.upper(), font=("Arial Black", 14))
         self.guessed_word_label.pack(side=tk.LEFT)
@@ -62,6 +60,7 @@ class GameWindow:
         self.mistakes_label.config(text=str(self.mistakes) + "/6 ERRORES")
         self.entry.delete(0, tk.END)
         # Actualiza tambien imagen aqui
+      #  self.hangman.config(image=self.image_list[self.mistakes])
 
     def check_result(self):
         if self.mistakes >= 6:
