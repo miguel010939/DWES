@@ -1,7 +1,6 @@
 import tkinter as tk
 from game import GameWindow
 
-
 class MainWindow:
     def __init__(self, root):
         self.root = root

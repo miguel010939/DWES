@@ -2,12 +2,13 @@ import tkinter as tk
 from tkinter import messagebox
 import load_data
 
-
 class GameWindow:
     def __init__(self, root, difficulty):
+        self.bg_color = "#dfbe9f"
         self.difficulty = difficulty
         self.root = root
         self.root.title("Juego del Ahorcado")
+        self.root.config(bg=self.bg_color)
 
         load_the_data = load_data.LoadData()
         # espera la finalizacion de los hilos
@@ -26,36 +27,37 @@ class GameWindow:
         self.image_list = load_the_data.get_images()
 
         self.welcome = tk.Label(self.root, text="¡BIENVENIDO AL JUEGO DEL AHORCADO!\nAdivina una letra de la palabra",
-                                font=("Arial", 15))
-        self.welcome.pack()
+                                font=("Arial", 15), background=self.bg_color)
+        self.welcome.pack(pady=5)
 
-        self.frame = tk.Frame(self.root)
-        self.frame.pack()
+        self.frame = tk.Frame(self.root, borderwidth=2, background="black")
+        self.frame.pack(pady=10)
 
-        self.frame2 = tk.Frame(self.root)
-        self.frame2.pack()
-        self.hangman = tk.Label(self.frame2, image=self.image_list[self.mistakes])
+        self.hangman = tk.Label(self.frame, image=self.image_list[self.mistakes])
         self.hangman.pack()
 
-        self.guessed_word_label = tk.Label(self.frame2, text=self.guessed_word.upper(), font=("Arial Black", 14))
+        self.frame2 = tk.Frame(self.root, borderwidth=2, background="white")
+        self.frame2.pack()
+
+        self.guessed_word_label = tk.Label(self.frame2, text=" ".join([letra for letra in self.guessed_word]).upper(), font=("Arial Black", 14), background="white")
         self.guessed_word_label.pack(side=tk.LEFT)
         self.mistakes_label = tk.Label(self.frame2, anchor="e", text=str(self.mistakes) + "/6 ERRORES",
-                                       font=("Arial", 11))
-        self.mistakes_label.pack(padx=10, side=tk.RIGHT)
+                                       font=("Arial", 11), background="white")
+        self.mistakes_label.pack(padx=20, side=tk.RIGHT)
 
         self.used_letters_label = tk.Label(self.root, text="Letras ya usadas: " + " ".join(self.used_letters),
-                                           font=("Arial", 13))
-        self.used_letters_label.pack(pady=7)
+                                           font=("Arial", 13), borderwidth=2, background=self.bg_color)
+        self.used_letters_label.pack(pady=10)
 
-        self.frame3 = tk.Frame(self.root)
-        self.frame3.pack()
-        self.entry = tk.Entry(self.frame3, font=("Arial Black", 14))
+        self.frame3 = tk.Frame(self.root, width=10, background=self.bg_color)
+        self.frame3.pack(pady=3)
+        self.entry = tk.Entry(self.frame3, font=("Arial Black", 14), width=10)
         self.entry.pack()
-        self.button_guess = tk.Button(self.frame3, text="Adivina", command=self.guess)
-        self.button_guess.pack()
+        self.button_guess = tk.Button(self.frame3, text="ADIVINA", command=self.guess, width=10)
+        self.button_guess.pack(pady=7)
 
     def update_gui(self):
-        self.guessed_word_label.config(text=self.guessed_word.upper())
+        self.guessed_word_label.config(text=" ".join([letra for letra in self.guessed_word]).upper())
         self.used_letters_label.config(text="Letras ya usadas: " + " ".join(self.used_letters))
         self.mistakes_label.config(text=str(self.mistakes) + "/6 ERRORES")
         self.entry.delete(0, tk.END)
