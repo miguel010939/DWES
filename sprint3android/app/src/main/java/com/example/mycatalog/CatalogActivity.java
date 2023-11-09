@@ -14,8 +14,8 @@ public class CatalogActivity extends AppCompatActivity {
     private Button button_detail;
     private Context context= this;
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
 
         button_detail = findViewById(R.id.ButtonDetail);
